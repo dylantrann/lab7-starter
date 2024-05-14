@@ -59,6 +59,12 @@ function saveRecipesToStorage(recipes) {
 	// B1. TODO - Complete the functionality as described in this function
 	//            header. It is possible in only a single line, but should
 	//            be no more than a few lines.
+	let storage = JSON.parse(localStorage.getItem('recipes'));
+	for (let i = 0; i < recipes.length; i++) {
+		storage.push(recipes[i]);
+	}
+	let string = JSON.stringify(storage);
+	localStorage.setItem('recipes', string);
 }
 
 /**
